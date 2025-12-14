@@ -21,8 +21,11 @@ data class Match(
     val id: Int,
     val homeTeam: String,
     val awayTeam: String,
+    val homeTeamAvatar: String,
+    val awayTeamAvatar: String,
     val date: String,
     val status: String,
+    val currentTime: String? = null,
     val result: MatchResult? = null,
     val sportId: Int,
     val competitionId: Int
