@@ -1,8 +1,6 @@
 package com.mozzart.th.vostojin
 
 import android.content.Context
-import android.util.Log
-import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.isActive
