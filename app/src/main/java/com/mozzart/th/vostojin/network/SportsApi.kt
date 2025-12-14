@@ -13,7 +13,7 @@ interface SportsApi {
     @GET("competitions")
     suspend fun fetchCompetitions(): List<Competition>
 
-    @GET("metches")
+    @GET("matches")
     suspend fun fetchMatches(): List<Match>
 
 }
