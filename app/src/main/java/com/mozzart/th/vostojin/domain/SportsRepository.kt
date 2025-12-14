@@ -35,9 +35,18 @@ class SportsRepository(
         // 2. Fetch from network
         try {
             println("-- SportsRepository: Trying network call for '$fileName'")
+            var receivedDataSize = 0
             val remoteData = networkCall()
-            cache.saveData(fileName, serializer, remoteData)
-            emit(remoteData)
+            // CHECK remoteData size here
+            receivedDataSize = when {
+                remoteData is List<*> -> remoteData.size
+                else -> 0
+            }
+            println("-- SportsRepository: Received network data size=${(remoteData as List<*>).size}, data=$remoteData")
+            if (receivedDataSize > 0) {
+                cache.saveData(fileName, serializer, remoteData)
+                emit(remoteData)
+            }
         } catch (e: Exception) {
             println("-- SportsRepository: Network call failed for $fileName, Error message: ${e.message}")
             // If we have cached data, all ok, already emitted.

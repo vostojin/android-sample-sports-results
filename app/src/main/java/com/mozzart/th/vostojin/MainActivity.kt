@@ -24,15 +24,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MozzartTheme {
-                //Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                //
-                //    Surface(
-                //        modifier = Modifier.fillMaxSize(),
-                //        color = MaterialTheme.colorScheme.background
-                //    ) {
-                //        Text("TODO")
-                //    }
-                //}
                 MainScreen()
             }
         }
