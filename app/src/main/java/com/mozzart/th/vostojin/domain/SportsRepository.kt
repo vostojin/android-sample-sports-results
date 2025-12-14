@@ -12,6 +12,7 @@ private const val SPORTS_CACHE_FILENAME = "sports.json"
 private const val COMPETITIONS_CACHE_FILENAME = "competitions.json"
 private const val MATCHES_CACHE_FILENAME = "matches.json"
 
+
 class SportsRepository(
     private val api: SportsApi, // Injected via Koin
     private val cache: FileCacheManager // Injected via KOin
@@ -33,6 +34,7 @@ class SportsRepository(
 
         // 2. Fetch from network
         try {
+            println("-- SportsRepository: Trying network call for '$fileName'")
             val remoteData = networkCall()
             cache.saveData(fileName, serializer, remoteData)
             emit(remoteData)

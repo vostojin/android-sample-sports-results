@@ -13,7 +13,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.mozzart.th.vostojin.presentation.DashboardScreen
+import com.mozzart.th.vostojin.presentation.SportsViewModel
 import com.mozzart.th.vostojin.ui.theme.MozzartTheme
+import org.koin.androidx.compose.koinViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,16 +24,24 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MozzartTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-
-                    Surface(
-                        modifier = Modifier.fillMaxSize(),
-                        color = MaterialTheme.colorScheme.background
-                    ) {
-                        Text("TODO")
-                    }
-                }
+                //Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                //
+                //    Surface(
+                //        modifier = Modifier.fillMaxSize(),
+                //        color = MaterialTheme.colorScheme.background
+                //    ) {
+                //        Text("TODO")
+                //    }
+                //}
+                MainScreen()
             }
         }
     }
+}
+
+@Composable
+fun MainScreen() {
+    val viewModel: SportsViewModel = koinViewModel()
+
+    DashboardScreen(viewModel)
 }
