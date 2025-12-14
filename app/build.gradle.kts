@@ -49,6 +49,10 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.kotlinx.serialization.json)
 
+    // Images - Coil with SVG support for Compose
+    implementation(libs.coil.compose)
+    implementation(libs.coil.svg)
+
     // Networking - Retrofit with Kotlinx Serialization and OkHttp logging
     implementation(libs.retrofit)
     implementation(libs.retrofit.kotlinx.serialization)
