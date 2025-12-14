@@ -29,7 +29,7 @@ class FileCacheManager(
                 file.writeText(jsonString)
             } catch (e: Exception) {
                 ensureActive()
-                println(("-- ERROR (FileCacheManager): ${e.message ?: "Error in saveData(...), cache was not updated."}"))
+                println(("-- FileCacheManager: ${e.message ?: "Error in saveData(...), cache was not updated."}"))
             }
         }
     }
@@ -46,7 +46,7 @@ class FileCacheManager(
                 }
             } catch (e: Exception) {
                 ensureActive()
-                println(("-- ERROR (FileCacheManager): ${e.message ?: "Error in saveData(...), cache was not used."}"))
+                println(("-- FileCacheManager: ${e.message ?: "Error in saveData(...), cache was not used."}"))
                 null
             }
         }
