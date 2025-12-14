@@ -78,11 +78,11 @@ fun DashboardScreen(
                 //    item { Text("Loading...") }
                 //}
 
-                // Sports
+                // Live Matches
                 item { SectionHeader("Mečevi uživo") }
-                val currentMatches = state.matches.filter { it.status == "LIVE" }
-                if (currentMatches.isNotEmpty()) {
-                    items(currentMatches) { match ->
+                val liveMatches = state.matches.filter { it.status == "LIVE" }
+                if (liveMatches.isNotEmpty()) {
+                    items(liveMatches) { match ->
                         LiveMatchCard(
                             match,
                             state.competitions.firstOrNull { it.id == match.competitionId })
@@ -110,15 +110,25 @@ fun DashboardScreen(
                         }
                     }
                 }
-                if (state.matches.isNotEmpty()) {
-                    items(state.matches.filter {
-                        it.status == "PRE_MATCH" && checkPrematchDate(it.date, state.selectedPrematchCategory)
-                    }) { match ->
+                val prematchMatches = state.matches.filter { it.status == "PRE_MATCH" && checkPrematchDate(it.date, state.selectedPrematchCategory) }
+                if (prematchMatches.isNotEmpty()) {
+                    items(prematchMatches) { match ->
                         PrematchMatchCard(
                             match,
                             state.competitions.firstOrNull { it.id == match.competitionId })
                     }
+                } else {
+                    item { Text("Nema mečeva...", modifier = Modifier.padding(16.dp)) }
                 }
+                //if (state.matches.isNotEmpty()) {
+                //    items(state.matches.filter {
+                //        it.status == "PRE_MATCH" && checkPrematchDate(it.date, state.selectedPrematchCategory)
+                //    }) { match ->
+                //        PrematchMatchCard(
+                //            match,
+                //            state.competitions.firstOrNull { it.id == match.competitionId })
+                //    }
+                //}
             }
         }
     }
@@ -129,6 +139,7 @@ fun parseDateTime(value: String): LocalDateTime {
     return try {
         LocalDateTime.parse(value, dateTimeFormatter)
     } catch (e: DateTimeParseException) {
+        println("-- parseDateTime error: $value could not be parsed to LocalDateTime object, returning .now() instead... ${e.message}")
         LocalDateTime.now()
     }
 }
@@ -192,7 +203,6 @@ fun SportSelection(
             modifier = Modifier.padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            // In a real app, use Coil/Glide for sport.sportIconUrl
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
                     .data(sport.sportIconUrl)
@@ -203,8 +213,8 @@ fun SportSelection(
                 modifier = Modifier.size(24.dp),
                 contentScale = ContentScale.Fit
             )
-            Spacer(modifier = Modifier.width(16.dp))
             if (isSelected) {
+                Spacer(modifier = Modifier.width(16.dp))
                 Text(text = sport.name, style = MaterialTheme.typography.titleMedium)
             }
         }
