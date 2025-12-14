@@ -29,7 +29,7 @@ class FileCacheManager(
                 file.writeText(jsonString)
             } catch (e: Exception) {
                 ensureActive()
-                println(("-- FileCacheManager: ${e.message ?: "Error in saveData(...), cache was not updated."}"))
+                println(("-- FileCacheManager: ${e.message ?: "Error in saveData(...) for '$fileName', cache was not updated."}"))
             }
         }
     }
@@ -40,13 +40,14 @@ class FileCacheManager(
             try {
                 val file = File(context.filesDir, fileName)
                 if (file.exists()) {
+                    println("-- FileCacheManager: using cached data from '$fileName', {${file.lastModified()}}")
                     json.decodeFromString(serializer, file.readText())
                 } else {
                     null
                 }
             } catch (e: Exception) {
                 ensureActive()
-                println(("-- FileCacheManager: ${e.message ?: "Error in saveData(...), cache was not used."}"))
+                println(("-- FileCacheManager: ${e.message ?: "Error in saveData(...) for '$fileName', cache was not used."}"))
                 null
             }
         }

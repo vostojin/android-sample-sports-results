@@ -37,7 +37,7 @@ class SportsRepository(
             cache.saveData(fileName, serializer, remoteData)
             emit(remoteData)
         } catch (e: Exception) {
-            println("-- SportsRepository: Network call failed for $fileName")
+            println("-- SportsRepository: Network call failed for $fileName, Error message: ${e.message}")
             // If we have cached data, all ok, already emitted.
             // If we don't have cached data, we emit an empty list
             if (cachedData == null) {
