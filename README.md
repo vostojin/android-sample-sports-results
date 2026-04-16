@@ -1,4 +1,4 @@
-# Sports Results Dashboard
+# Sample Sports Results Dashboard
 
 An Android application that displays sports results, competitions, and matches with an offline-first approach.
 
