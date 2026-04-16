@@ -1,7 +1,7 @@
-package com.mozzart.th.vostojin
+package com.sample.sportsresults
 
 import android.app.Application
-import com.mozzart.th.vostojin.di.appModule
+import com.sample.sportsresults.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

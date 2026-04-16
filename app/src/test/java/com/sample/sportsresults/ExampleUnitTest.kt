@@ -1,4 +1,4 @@
-package com.mozzart.th.vostojin
+package com.sample.sportsresults
 
 import org.junit.Test
 

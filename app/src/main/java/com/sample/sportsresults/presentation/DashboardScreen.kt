@@ -1,4 +1,4 @@
-package com.mozzart.th.vostojin.presentation
+package com.sample.sportsresults.presentation
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -21,9 +21,9 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.decode.SvgDecoder
 import coil.request.ImageRequest
-import com.mozzart.th.vostojin.domain.Competition
-import com.mozzart.th.vostojin.domain.Match
-import com.mozzart.th.vostojin.domain.Sport
+import com.sample.sportsresults.domain.Competition
+import com.sample.sportsresults.domain.Match
+import com.sample.sportsresults.domain.Sport
 import java.time.DayOfWeek
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter

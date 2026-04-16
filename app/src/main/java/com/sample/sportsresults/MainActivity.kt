@@ -1,13 +1,13 @@
-package com.mozzart.th.vostojin
+package com.sample.sportsresults
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
-import com.mozzart.th.vostojin.presentation.DashboardScreen
-import com.mozzart.th.vostojin.presentation.SportsViewModel
-import com.mozzart.th.vostojin.ui.theme.MozzartTheme
+import com.sample.sportsresults.presentation.DashboardScreen
+import com.sample.sportsresults.presentation.SportsViewModel
+import com.sample.sportsresults.ui.theme.SampleTheme
 import org.koin.androidx.compose.koinViewModel
 
 class MainActivity : ComponentActivity() {
@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MozzartTheme {
+            SampleTheme {
                 MainScreen()
             }
         }

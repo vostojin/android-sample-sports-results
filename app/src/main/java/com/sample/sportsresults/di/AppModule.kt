@@ -1,10 +1,10 @@
-package com.mozzart.th.vostojin.di
+package com.sample.sportsresults.di
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import com.mozzart.th.vostojin.FileCacheManager
-import com.mozzart.th.vostojin.domain.SportsRepository
-import com.mozzart.th.vostojin.network.SportsApi
-import com.mozzart.th.vostojin.presentation.SportsViewModel
+import com.sample.sportsresults.FileCacheManager
+import com.sample.sportsresults.domain.SportsRepository
+import com.sample.sportsresults.network.SportsApi
+import com.sample.sportsresults.presentation.SportsViewModel
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient

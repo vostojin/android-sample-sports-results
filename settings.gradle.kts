@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Mozzart-TH-Vostojin"
+rootProject.name = "Sample-App"
 include(":app")

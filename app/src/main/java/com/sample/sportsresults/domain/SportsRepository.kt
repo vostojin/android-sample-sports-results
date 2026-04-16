@@ -1,7 +1,7 @@
-package com.mozzart.th.vostojin.domain
+package com.sample.sportsresults.domain
 
-import com.mozzart.th.vostojin.FileCacheManager
-import com.mozzart.th.vostojin.network.SportsApi
+import com.sample.sportsresults.FileCacheManager
+import com.sample.sportsresults.network.SportsApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.serialization.KSerializer
@@ -35,10 +35,9 @@ class SportsRepository(
         // 2. Fetch from network
         try {
             println("-- SportsRepository: Trying network call for '$fileName'")
-            var receivedDataSize = 0
             val remoteData = networkCall()
             // CHECK remoteData size here
-            receivedDataSize = when {
+            val receivedDataSize = when {
                 remoteData is List<*> -> remoteData.size
                 else -> 0
             }

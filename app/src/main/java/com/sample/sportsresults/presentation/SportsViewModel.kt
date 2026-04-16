@@ -1,11 +1,11 @@
-package com.mozzart.th.vostojin.presentation
+package com.sample.sportsresults.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mozzart.th.vostojin.domain.Competition
-import com.mozzart.th.vostojin.domain.Match
-import com.mozzart.th.vostojin.domain.Sport
-import com.mozzart.th.vostojin.domain.SportsRepository
+import com.sample.sportsresults.domain.Competition
+import com.sample.sportsresults.domain.Match
+import com.sample.sportsresults.domain.Sport
+import com.sample.sportsresults.domain.SportsRepository
 import kotlinx.coroutines.flow.*
 
 enum class PrematchCategory(val label: String) {

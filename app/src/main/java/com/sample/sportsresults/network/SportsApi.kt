@@ -1,8 +1,8 @@
-package com.mozzart.th.vostojin.network
+package com.sample.sportsresults.network
 
-import com.mozzart.th.vostojin.domain.Competition
-import com.mozzart.th.vostojin.domain.Match
-import com.mozzart.th.vostojin.domain.Sport
+import com.sample.sportsresults.domain.Competition
+import com.sample.sportsresults.domain.Match
+import com.sample.sportsresults.domain.Sport
 import retrofit2.http.GET
 
 interface SportsApi {

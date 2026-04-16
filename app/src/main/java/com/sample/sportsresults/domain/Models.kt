@@ -1,4 +1,4 @@
-package com.mozzart.th.vostojin.domain
+package com.sample.sportsresults.domain
 
 import kotlinx.serialization.Serializable
 
